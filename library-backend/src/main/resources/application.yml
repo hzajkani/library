@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    username: ${DATABASE_USERNAME:root}
+    password: ${DATABASE_PASSWORD:1234}
+    url: jdbc:mysql://localhost:3306/reactlibrarydatabase?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    jpa:
+      repositories:
+        enabled: true
+    rest:
+      base-path: /api
+
+  jpa:
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    defer-datasource-initialization: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      javax:
+        persistence:
+          create-database-schemas: true
+      hibernate:
+        generate_statistics: true
+        format_sql: true
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  sql:
+    init:
+      mode: always
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+  jpa:
+    hibernate:
+      ddl-auto: create

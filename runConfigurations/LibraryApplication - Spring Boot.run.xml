@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="LibraryApplication - Spring Boot" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="library" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.backend.library.LibraryApplication" />
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" />
+      <option name="region" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
